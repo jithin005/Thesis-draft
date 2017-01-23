@@ -1,0 +1,86 @@
+\chapter{Related Work}
+
+
+\par In \cite{andronio2015} ransomware was analysed statically. 
+Where they used NLP (Natural Language Processing). 
+It checked for all the strings and text to detect the threatening factor by comparing with sentence and words in many language. 
+Thus there was a learning step where the framework learnt all the threatening words and sentences from most of the language. 
+After this they used API flow to detect any file operation done similar by the ransomware. 
+Ransomware, they takes each file and encrypts it and delete the original file. 
+So they will check for the same flow to detect ransomware. 
+Also they can detect Locker ransomware. 
+Checks if the app is able to lock the phone by static analysis. 
+Also it checks if home and back button are override to a user defined function. 
+This framework does not work for languages which are not known to them, so it cant be used world wide. 
+This framework doesn't check dynamically loaded APK files. 
+If the ransomware app displays figures rather than text, this frame work fails as it does not use any OCR (Optical Character Recognition) techniques.
+
+
+\par In \cite{yang2015} the author gives a basic idea about how to do automatic detection and analysis of ransomwares. 
+This is a theoretical paper. 
+This paper discusses about common hacking techniques like insecure WiFi, cloned apps, third party apps etc. 
+Author also specifies that the permission also can give a hint if it is a ransomware or not. 
+Specifies some combination of permission which is seen for ransomware. 
+Design of an automated analysis which has both static and dynamic analysis. 
+Static analysis includes checking of permissions, sequence of API invoking, checking the resources and APK structure.
+Dynamic analysis includes critical path and data flow, malicious domain access, malicious charges and checks if it bypasses the android permission. 
+This paper doesn't include any implementation just gives an idea about how to do the analysis.
+
+
+\par In \cite{mercaldo2016} the author uses formal methods to detect ransomware. 
+The paper boast on getting 100\% success in detecting ransomware but not much of implementation is given. 
+The formal method, author used has three steps :-
+\begin{itemize}
+    \item \textbf{Formal method construction :-} Byte-code of the app is converted to a formal method.
+    \item \textbf{Temporal Logic Properties Construction :-} Defines the behaviour of ransomware. Differentiates from goodware. 
+    \item \textbf{Ransomware Family Detection :-} A formal verification environment, which contain a model checker. Logical properties are compared of the app and the ransomwares used for the logic properties construction.
+\end{itemize}
+Advantage of this implementation is that it is independent of languages. 
+Source code is not needed for this proposed scheme.
+Even if the source code is obfuscated, the proposed scheme will work.
+Implementing such a scheme is very difficult as they have to define model for each category and to implement it in a device requires good amount of resource.
+
+
+\par In \cite{scaife2016} the author focuses only on crypto ransomwares in PC running Windows, as most of the ransomware attack is reported in windows platform. 
+Analysis was done on a data centric behavior.
+Crypto ransomwares are categorised into three:-
+\begin{itemize}
+    \item \textbf{Class A:-} In this class of ransomware, there is no deletion of the original file.
+    The encrypted data overwrites the existing data.
+    \item \textbf{Class B:-} In this class of ransomware, the file to be encrypted is moved to a temporary place.
+    Then it is overwritten with encrypted data. 
+    Then it is moved back to the original position of the file.
+    \item \textbf{Class C:-} In this class of ransomware, the original file is deleted.
+\end{itemize}
+When the file is encrypted, the file's extension changes.
+This can be detected by keeping track of the magic number of the files.
+The author introduces another technique, where it uses sdhash to compare two instance of same file.
+The sdhash returns 100\% if the two files are same and if two files are fully different then it returns 0\%.
+If the file's content is changed by a user then the sdhash of those two files will be greater than 50\% which shows some similarity.
+If the crypto-ransomware encrypts the file, the file's content becomes completely random where sdhash  value is less than 50\%.
+File-type funnelling is another indicator which author used for detecting ransomwares. 
+Crypto ransomwares after encrypting changes the file extension to a single one. 
+So a monitoring system can detect which process is using different type of files creating only a single type of files.
+
+
+\par In \cite{song2016}, the author took a modular approach for preventing the ransomware from encrypting the files or locking the device.
+Configuration, Monitoring and Processing modules are used.
+In configuration module, the user is asked about which files are to be protected. 
+This protected area is called Priority Protection Area(PPA).
+Blacklisted process and system configuration is also noted
+In monitoring module, the files and process are monitored for detecting anomalies.
+Every file event is noted, for those files that is noted in PPA.
+All the process that access the files in PPA is monitored also checking the memory usage, I/O count etc.
+In processing module, whenever any malicious activity is detected from the monitoring module, this module will notify the user about it.
+Whatever action taken by the user is noted by the app and added to the database.
+
+
+\par In \cite{agarwal2013}, the author uses crowd sourcing for getting the privacy settings and protecting the privacy of the user.
+The author introduced an app in iOS for protecting the privacy, name of the app is ProtectMyPrivacy(PMP).
+This works by hooking into those function where privacy matters.
+After hooking it implements the modules in the framework.
+So whenever a private data is to be used, PMPSBTweak will be called.
+This will check the PMP server for the settings if not available in the local database.
+Whatever decision is to be made is sent to PMPSB Tweak.
+If it is to be protected then the data is sent to an anonymizer module.
+The PMP server contains all the privacy setting that is collected from the users of the app.

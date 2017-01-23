@@ -1,0 +1,188 @@
+\chapter{Background}
+
+\section{Android Ransomware}
+
+Ransomware is a malware which demands money from users under the threat of making the resource unavailable.
+This means that you won’t be able to open any apps or access the settings on the device.
+A message usually appears explaining the device is locked and that you need to pay a “ransom” in order to unlock it and get rid of the malicious software.
+This type of malware deny the control of device or files and will not allow the users to use it, unless the users pay the ransom. 
+At first this malware infected in PC. 
+Nowadays this malware infects in mobiles too especially in mobiles running in Android platform.
+Since in Android platform, apps can be installed from outside the legitimate app store.
+The payment is done using some anonymous currencies like bitcoin. 
+So far there are two types of ransomware in Android :- Crypto ransomware and Locker ransomware.
+In crypto ransomware, it encrypts the files with preferred formats.
+In locker ransomware, it locks the device making it unusable by the users. 
+After encrypting or locking it demands for a ransom, which scares the users and make them pay. 
+These ransomware are propagated by spam, social engineering, botnets drive-by downloads etc. 
+Also a ransomware can be downloaded from a tor server, which is a Command \& Control server, as a background process by a legitimate app. 
+This kind of ransomwares are hard to detect and has least detection percentage.
+
+\par We have seen a shift in technology from computer to smart phones. 
+Now smart phones have become an integral part of human in this fast paced life, which helps them to get updated and get aware of the outside world. 
+Also Android is the OS used in most smartphones. 
+Thus there is a threat of ransomware in smart phones. 
+To date, there is no guaranteed detection of ransomwares in Android. 
+Also the best existing app in removal of ransomware is Avast Ransomware Removal. 
+But it only checks for the signature. 
+But this kind of app detects only the existing ransomware. 
+According to \href{http://dc.bluecoat.com/Mobile_Malware_Report}{blue coat report} in 2015, ransomware is the top threat in Android platform.
+
+\subsection{Common Infection Vectors}
+
+Ransomwares typically fulfils the definition of a Trojan horse: it spreads by masquerading as a legitimate application. 
+Ransomwares are published as games and pronography-related apps, which increase the the probability of getting installed to the device. 
+Some times , ransomwares takes the name and icon of some legitimate application, or else the attackers modify the existing code by adding malicious code into it and keeping all other functionality same as the app.
+For malware that doesn’t inherently rely on a visual manifestation like ransomware does (backdoors or SMS Trojans, for example), this increases the chance that the malicious behavior will go unnoticed. 
+The above said process can be detected by checking the digital signature, to avoid such detection the authors of ransomware will re-sign it and publish in some other developer account.  
+Ransomwares doesn't use exploit-driven drive-by downloads.
+
+\subsection{Malware C\&C Communication}
+
+After a ransomware is installed it contacts to a Command \& Control (C\&C) server.
+Ransomwares contacts the server for saving some basic information like device model, IMEI number, device language and so on.
+Sometimes the ransomware establish a permanent connection so that it can listen to and execute commands given by the C\&C server.
+This creates a botnet of infected Android devices under the attacker’s control.
+Some examples of commands supported by Android ransomware, outside its primary scope of locking the device and displaying a ransom message, include:
+\begin{itemize}
+\item open an arbitrary URL in the phone’s browser
+\item send an SMS message to any or all contacts
+\item lock or unlock the device
+\item steal received SMS messages
+\item steal contacts
+\item display a different ransom message
+\item update to a new version
+\item enable or disable mobile data
+\item enable or disable Wi-Fi
+\item track user’s GPS location
+\end{itemize}
+The usual communication protocol used is HTTP.
+Communication is mostly done over HTTP. 
+But in some cases communication is done by using Google Cloud Messaging.
+This service enables developers to send and receive data to and from apps installed on the Android device. 
+A similar protocol, also used by Android malware, is Baidu Cloud Push.
+Some ransomware used Tor .onion domains, or the XMPP (Jabber) protocol.
+Alternatively, Android Trojans can receive commands, as well as send data using the built in SMS functionality.
+
+\subsection{Malware Self-Protection}
+
+Infecting a victim's device with Android malware is not a trivial task for attackers. 
+There are many software for detecting and removal of ransomware.
+Naturally, once they succeed in overcoming these hurdles, they want to make sure that their malevolent code stays on the device for as long as possible. 
+Android malware uses numerous self-defense techniques. 
+For example, Android/Lockerpin implements several, including attempting to kill processes belonging to anti-malware applications.
+But one of the most universal techniques that we’re starting to see in more and more Android malware is obtaining Device Administrator privileges. 
+Note that Device Administrator privileges are not the same as root access, which would be even more dangerous if acquired by malware.
+Legitimate Device Administrator applications use these extended permissions for various (mostly security-related) reasons. 
+Malware, on the other hand, uses this Android feature for its own protection against uninstallation. 
+Before such an app can be uninstalled, its Device Administrator rights must first be revoked.
+Some malware, such as Android/Lockerpin, additionally uses the extra permissions only available to Device Administrator applications to set or change the lock screen PIN.
+
+\section{Android Ransomware Examples}
+
+In this section we look onto some examples of Android ransomwares.
+
+\subsection{Android Defender}
+
+This one surfaced in 2013. 
+Android Defender is accepted to be a pioneer in the variety of Android ransomware plagues pleasing rouge antivirus qualities and the ability to lock the screen of a tainted cell phone. 
+This application is dispersed by means of different shady locales, yet Google's Play Store never was one of them. 
+Clients are hoodwinked into downloading something they believe is Skype with a free telephone call include.
+
+The app works comparably to fake antivirus programs. 
+Casualties are told their device is infected with malware, and they have to pay 129 USD to remove the issue, which is basically an expulsion of nonexistent infections. 
+To seem dependable, the culpable applet professes to detect Android infection that exist, including Android MailStealer. 
+Android Defender's APK document contains an XML information record that stores the names of fake dangers reported by this malware. 
+The indicated malware database appears to increment in size each time a day by day "redesign" finishes, however that is only an impact from Java pseudorandom number generator working and not the genuine overhaul.
+
+The malware modifies some of the operating system setting so that the infected user can't do a factory data reset.
+The user may, along these lines, need to perform a hard reset by associating the gadget to a desktop PC. 
+On the off chance that something turns out badly amid this procedure, the gadget may get to be distinctly inoperable. 
+
+The harmful program can't be uninstalled by using the settings option. 
+The threat stops different applications from being executed, and causes system crashes occasionally. 
+In general, Android Defender upsets the working of the cell phone, reports nonexistent issues intentionally and goes about as a ransomware threat. 
+If the victim declines to pay, the application offers a rebate, and the sum goes down to 89 USD. 
+Regardless of the amount you pay, however, you don't receive anything valuable consequently with the exception of a help from ceased popup cautions. 
+The uplifting news is that the malware has apparently assaulted just around 50 gadgets, and the hoodlums weren't extremely proficient as they didn't get the payment page working properly.
+
+\subsection{Simplocker}
+
+This is the first-ever Android ransomware that encypts documents. 
+It rose up out of the Russian underground discussion and was initially seen in the wild in summer 2014. 
+Simplocker resembles to the Reveton family known for authoring the notorious police ransomware. 
+It signified a progressive move of crypto malware from Windows to Android. 
+This malware finds documents with specific extensions on the SD card, then uses the AES algorithm to encode them, and at last triggers a coercion routine for information decoding. 
+The traded off client is deceived into intuition the contraption was hindered by a law authorization organization due to supposedly identified unlawful action including child pornography or a comparative lawful offense. 
+This is a characteristic for the previously mentioned police ransomware. 
+Simplocker shows image of the user taken from the front facing camera of the gadget. 
+
+The primary version of this Trojan featured geo-limited spread. 
+It just focused on Android clients in Ukraine and Russia, and the payment guidelines were in Russian. 
+The documents figured by this variation were not difficult to decode in light of the fact that the decoding key was hard-coded into the Trojan. 
+Besides, the keys that it used were same for all the users. 
+The second cycle is more complex. Its appropriation scope extended to more nations, and the payment notes are in English. 
+The decoding keys are special for each cell phone, which makes recuperation scarcely attainable. 
+The payoff adds up to 300 USD, and the tainted clients should submit it by means of MoneyPak prepaid administration. 
+The Simplocker payload is saved onto Android gadgets through a fake Flash Player establishment. 
+
+The future casualties get a deceptive popup ready that advances the shady setup, expressing that it's obligatory for watching recordings.
+On the off chance that the promotion is clicked and the establishment starts, the fake Flash Player asks for managerial benefits, which at last prompts to the sending of the crypto assault off camera. 
+The disease connects with its C2 server at regular intervals. At the point when the association is initially settled, it transmits distinguishing proof information which is one of a kind to the particular device, for example, the OS, BUILD\_ID, IMEI, PhoneNumber, OperatorName, and so forth. 
+This Command and Control server, which is facilitated on Tor namelessness organize, in this manner issues the points of interest for unscrambling after the casualty presents the payment.
+
+\subsection{Lockerpin}
+Lockerpin, which claims to be yet another x-evaluated media content player, is conveyed in a comparative design. 
+
+Trustworthy administrations like Google Play are not included in the spreading procedure. 
+
+This crusade, in any case, is significantly more perilous on the grounds that it misuses the stock screen bolt includes incorporated with Android. 
+
+More than 75\% of Lockerpin casualties are from the United States. The malware gets overseer level authorizations on the gadget as the casualty unconsciously affirms this, reasoning it's an innocuous overhaul that is being endorsed. Attributable to the administrator benefits got along these lines, the applet changes the PIN code, in this manner making it difficult to get to the cell phone or tablet. Lockerpin requests a fine of 500 USD for purportedly seeing and putting away precluded material. At the point when the tainted client tries to incapacitate Device Admin for the Trojan, a get back to capacity will naturally reestablish the raised authorizations. 
+
+This disease has presented a more refined usual way of doing things to the Android bolt screen malware environment since the locking guideline no longer depends on only an intermittent activating of the payoff cautioning at the forefront. Without root benefits set up, the casualty can't uninstall the malware in light of the fact that it overlays the Device Administrator window with a fake one. Along these lines, tapping "Proceed" essentially reactivates the Trojan's benefits.
+The malevolent application can be securely expelled in the occasion the Android gadget had been established before the assault. All it takes to take care of business in these great conditions is dispatch ADB (Android Debug Bridge), empower investigating and annihilate all documents identified with the ransomware. Additionally, the client might have the capacity to reset the PIN if a MDM (cell phone administration) instrument is running on the contraption. A manufacturing plant reset settles the issue too, yet it deletes the casualty's records. 
+
+The ransomware likewise receives antivirus avoidance systems. Specifically, it ends the executables of ESET Mobile Security, Avast Mobile Security and Dr.Web for Android.
+
+\subsection{Lockdroid}
+
+This cycle of Android ransomware utilizes Google's Material Design to assemble a reliable looking UI. Material Design is a dialect made by Google that elements matrix based formats, favor profundity impacts, and responsive visual segments to convey instinctive experience over the organization's administrations. The crooks behind Lockdroid utilize this style to create fake legitimate notices and show the collected gadget logs alongside touchy client points of interest in an offer to make the blackmail scarier and more reasonable. 
+
+The culprits are disseminating Lockdroid by disguising its payload as an application overhaul bundle took off by Google. Tapping the "Proceed with" catch on the imposter "Bundle Installation" exchange adequately approves the hurtful establishment and subtly summons the particular API. With that in mind, the contamination outfits a TYPE\_SYSTEM\_ERROR popup window created on the most astounding UI layer. This window puts on a show to demand authorization to unload the affirmed upgrade bundle parts. 
+
+At that point, the client is recommended to tap another "Proceed with" catch on the "Establishment is Complete" popup. The last is, truth be told, a TYPE\_SYSTEM\_OVERLAY window showed on top of the chairman initiation exchange. In this manner, clients wind up tapping the "Enact" alternative while they think they are just proceeding onward with the product overhaul. Alluded to as clickjacking, this sort of misrepresentation must be conveyed on gadgets running working framework forms under Android 5.0. 
+
+Having hit a gadget, the infection snatches the total of gadget logs, for example, the program history, instant messages and call records. This being done, it bolts the telephone and shows a payment alarm on the bolt screen. The misleading cautioning states that the client has gotten to illegal materials and that the separate logs are currently in law authorization's care. The bolt screen menu incorporates alternatives to see the log subtle elements, making the hazard show up yet more consistent with life. This isn't another vector of ransomware action, however the strain being referred to makes the gathered private information accessible to the contaminated individual.
+
+\subsection{Jisut}
+Jisut, otherwise called Android/LockScreen.Jisut is not a regular contamination. Its merchants seem to seek after prankish destinations as opposed to be spurred by cash. Engendering of this Trojan is generally confined to China, and it was probably made by amateurish script kiddies. 
+
+The dominant part of Android ransomware tests request their casualties to submit ransoms by means of prepaid administrations like MoneyPak or the Bitcoin cryptocurrency framework, yet the administrators of Jisut appear to dismissal secrecy totally. The bolt screen showed by Jisut advises the tainted Android clients to contact the con artists over QQ, a well known Chinese interpersonal organization. As indicated by the profiles, the blackmailers are youngsters. 
+
+This infection was found in mid 2014. Many its variations have showed up from that point forward. Albeit some of their attributes differ, they all influence a similar code. One of these spinoffs highlights a full-screen overlay, which is a dark foundation that makes it resemble the Android gadget is bolted or killed. An interesting message is produced when the casualty tries to reboot or close down the contraption. For example, the telephone may play a shower scene sound from Alfred Hitchcock's Psycho motion picture while vibrating constant. Another version of Jisut makes the casualty tap a catch understanding "I'm a dolt" 1000 circumstances, and the circle just rehashes a short time later. 
+
+Beside tricks appropriate, the malware can genuinely influence the sullied device. A few adaptations are equipped for altering the client characterized PIN or watchword that opens the gadget. Besides, Jisut may show a custom secure screen window like in the police ransomware situations. A few variations engender by sending instant messages containing a vindictive hyperlink to the majority of the contaminated client's contacts.
+\subsection{Xbot}
+
+The generally late Xbot Trojan family incorporates more than 20 affronting applications. This disease can take Android clients' actually identifiable information and keeping money qualifications by utilizing a phishing deception. To take care of business, it impersonates Google Play installment screen and Login interfaces for a few e-managing an account applications. Another frightful usefulness is remote information encryption – Xbot can encode records put away on the SD card. At that point, it advises casualties to recover their information by paying a payoff of 100 USD through PayPal. To finish it off, the malware steals instant messages and contacts. 
+
+Xbot for the most part targets clients in Australia and Russia. In view of code investigation, it gives off an impression of being a fresher adaptation of the notorious Trojan named Aulrin, which surfaced in 2014. Be that as it may, while Aulrin utilized Lua and .NET structure to work, Xbot depends on the Rhino JavaScript motor by Mozilla. Besides, the Trojan utilizes DexGuard innovation to keep security scientists from figuring out its code. 
+
+The creator of Xbot is doubtlessly from Russia. The JavaScript code contains remarks in Russian, and the previously mentioned Google Play phishing trick included a deceptive warning in a similar dialect. Additionally, a Russian enlistment center was utilized to enlist a portion of the malware's Command and Control areas. 
+
+Xbot connects with its C2 server in the wake of invading a gadget. Contingent upon the approaching charges, the contamination may act in an unexpected way. For instance, if a "cc\_notify" charge is gotten the Trojan begins conveying the Google Play installment page extortion. In the event that the of "enable\_inject" order, the malware searches for applications identified with various Australian banks. On the off chance that one is recognized, a fake managing an account application interface is shown on top of the first program, which permits the assailants to block the login certifications and transmit them to the C2 server. 
+
+In the occasion Xbot gets an "enable\_locker" summon, it scrambles the client's close to home documents and shows a payment page. The alarm says that the casualty has five days to purchase a 100 USD worth PayPal card and give the card's number generally the records will be lost. 
+
+The Trojan can likewise parse instant messages that the client gets from banks' top notch rate numbers. Along these lines, the frauds endeavor to get hold of the individual's record subtle elements and affirmation codes for different exchanges.
+
+\section{What is Crowdsourcing?}
+
+\par The term \textbf{"Crowdsourcing"}\cite{brabham2013crowdsourcing} was first coined by Jeff Howe in his article "The Rise of Crowdsourcing". 
+The combination of bottom-up, open, creative process with top-down organizational goals is called crowdsourcing.
+Online communities, also called crowds, are given the opportunity to respond to crowdsourcing activities promoted by the organization, and they are motivated
+to respond for a variety of reasons. 
+It is a new way of doing work.
+As we know mobile devices has resource constrains so most of the analysis for malware detection should be done outside the device. 
+This can be done by integrating the idea of crowdsourcing to the device OS.

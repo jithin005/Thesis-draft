@@ -1,0 +1,16 @@
+%
+%  summary.tex  2007-02-06  Mark Senn  http://www.ecn.purdue.edu/~mark
+%
+
+\chapter{Proposal}
+
+Here, we propose a ransomware detection module, which can be included to the Android ROM. 
+Function of this module is to get data from user, upload log data from the device, save the user data to the cloud and most particularly alerting the user if a ransomware is detected. 
+This section gives an overview of what the system is, detailed explanation will be given in the following section.\\
+
+When an app is installed it is sent to the cloud server.
+At the installation time itself the user will be asked whether the app is to be installed in trusted or untrusted mode.
+After that some questions will be asked to the user regarding the permissions.
+If the user installs the app in trusted mode no more questions will be asked.
+If the user installs the app in untrusted mode, questions will be asked periodically.
+With the help of finding of the cloud server and all the answers recieved from the user, determione that it is a ransomware.

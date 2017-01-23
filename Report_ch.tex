@@ -1,0 +1,195 @@
+\documentclass[a4paper,11pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lipsum}
+% Title Page
+\title{}
+\author{}
+\renewcommand{\abstractname}{\huge ABSTRACT}
+\usepackage{amsmath,amsthm,amssymb}
+
+\usepackage{enumitem}
+
+\newenvironment{steps}[1]{\begin{enumerate}[label=#1 \arabic*]}{\end{enumerate}}
+
+\makeatletter% http://tex.stackexchange.com/questions/29517/forcing-new-line-after-item-number-in-enumerate-environment/29518#29518
+\def\step{%
+   \@ifnextchar[ \@step{\@noitemargtrue\@step[\@itemlabel]}}
+\def\@step[#1]{\item[#1]\mbox{}\\\hspace*{\dimexpr-\labelwidth-\labelsep}}
+\makeatother
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\newcommand*{\annot}[1]{\tag*{\footnotesize{\textcolor{black!50}{#1}}}}
+\usepackage{ ragged2e}
+\setlength{\parindent}{4em}
+\setlength{\parskip}{1em}
+\usepackage[utf8]{inputenc}
+\usepackage{ ragged2e}
+\setlength{\parindent}{4em}
+\setlength{\parskip}{1em}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{relsize}
+\renewcommand{\baselinestretch}{1.3} 
+\usepackage{lipsum}%% a garbage package you don't need except to create examples.
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+%\lhead{Detecting Android ransomware within the device using Crowdsourcing}
+\rhead{}
+%\cfoot{center of the footer!}
+\renewcommand{\headrulewidth}{0.6pt}
+\renewcommand{\footrulewidth}{0.6pt}
+\usepackage[utf8]{inputenc}
+\usepackage[utf8]{inputenc}
+\usepackage[utf8]{inputenc}
+\renewcommand{\headrulewidth}{0.6pt}
+\renewcommand{\footrulewidth}{0.6pt}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\hypersetup{pdftex,colorlinks=true,allcolors=black}
+\usepackage{hypcap}
+\hypersetup{pdftex,colorlinks=true,allcolors=black}
+\usepackage{hypcap}
+
+\usepackage{float}
+
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{listings}
+
+\title{}
+\author{}
+\date{}
+
+
+\begin{document}
+
+\begin{titlepage}
+
+\begin{center}
+
+%\textup{\small {\bf CSU498 Project} \\ Report}\\[0.2in]
+
+% Title
+\large \textbf {DETECTING ANDROID RANSOMWARE WITHIN THE DEVICE USING CROWDSOURCING}\\[0.1in]
+ { Minor Project Report}\\
+  \vspace{0.1cm}
+       \large\bf{Master of Technology}\\
+       \large\bf{in}\\
+        \vspace{.1cm}
+       \large\bf{Cyber Security Systems and Networks}\\
+        \large\bf{by}\\
+       \large\bf{Jithin Chandra Mohan}\\
+       \large\bf{AM.EN.P2CSN15010}\\
+       \vspace{.1cm}
+       {under the guidance of}\\
+       \large\bf{Dr. Prabhaker Mateti\\ \textit{Associate Professor}}      
+        \vspace{0.1cm}
+        \begin{center}
+         \includegraphics[scale=0.3]{kkk.jpg}
+        \end{center}
+        \vspace{0.1cm}
+      \large {\bf Department of Cyber Security Systems and Networks\\
+      AMRITA VISWAVIDYAPEETHAM\\
+          AMRITAPURI CAMPUS\\
+      KOLLAM, KERALA-690525\\
+      DECEMBER 2016}\\[0.2in]
+\vspace{1.1in}
+
+\vfill
+
+\end{center}
+
+\end{titlepage}
+
+\pagestyle{plain}
+\newpage
+\thispagestyle{empty}
+\include{ack}
+\thispagestyle{empty}
+\include{bonafied}
+\thispagestyle{empty}
+\include{Declaration}
+\begin{abstract}
+The rapid growth of smartphone technology led to more powerful smartphones. 
+As every coin has two sides, it helps in the productivity to the users but brings security threats at the same time.
+One kind of a mobile threat, that rose recently is ransomware.
+There is a need to detect these malware as soon as possible, that in the small time that these get, a malware can damage the files or the device of the user a lot.
+Reason for installing such apps are downloading and installing apps from unknown sources.
+If there is no trust to the source, how to trust the app.
+This report explains how crowd sourcing can be used to verify the sources and all the elements in the apps to prevent the installation or early detection of malware, especially Ransomware.\\
+\textbf{Keywords:-} Android, Ransomware, Crowd Sourcing.
+\end{abstract}
+\newpage
+\tableofcontents
+\newpage
+\listoffigures
+\newpage
+
+
+
+\newpage
+% Front matter (dedication, etc.).
+
+
+\pagestyle{fancy}
+
+% Put chapter \include commands here.
+% CHANGE \include{...} COMMANDS BELOW?
+\include{introduction}
+
+\include{background}
+% Summary and/or conclusions are optional but often used.
+% The summary and/or conclusions often are the last
+% major division(s) of the text.
+% Reference: TM 32.
+% CHANGE NEXT LINE?
+
+\include{problem}
+
+
+\include{proposal}
+
+
+\include{results}
+
+
+\include{related}
+
+\include{conclusion}
+
+
+
+% Recommendations are optional.
+% You may include recommendations as a major division if your
+% subject matter and research dictate.
+% Reference: TM 32.
+% CHANGE NEXT LINE?
+%\include{recommendations}
+
+% Appendices are optional.
+% Appendices are not necessarily part of every thesis. Appendices are used
+% for supplementary illustrative material, original data, computer programs,
+% and other material not necessarily appropriate for inclusion within the
+% text of your thesis. 
+% Reference: TM 33.
+% Use "\appendix" for one appendix or "\appendices" for more than one
+% appendix.
+% CHANGE NEXT 7 LINES?
+%\appendices
+%\include{demo-citations}
+%\include{demo-figures}
+%\include{demo-mathematics}
+%\include{demo-multicols}
+%\include{demo-tables}
+%\include{demo-text}
+
+% Bibliography is required if you consulted any outside references.
+% Reference: TM 32.
+\include{bibliography}
+
+\end{document}          
